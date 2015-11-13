@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<script src="js/jquery-2.0.2.js"></script>
+    	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css" />
+   		<!--<meta http-equiv="Content-Security-Policy" content="media-src 'self' http://192.168.0.38:8080 http://10.107.31.24:8080 http://158.227.64.57:8080 http://ehutb-flash1-pro.ehu.es;"/>-->
+        <title>Travel Athlete</title>
+    </head>
+    <body>
+    	<div data-role="page" id="inicio">
+        <div data-role="header" data-position="fixed" data-theme="b">
+        	<h1>Travel Athlete</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+        	<div id="logo_image">
+        		<img src="img/logoTA400x.png"></img>
+        	</div>
+        	<p class="intro"><b>TravelAthlete:</b> app diseñada para deportistas de élite.</p>
+        	<p class="intro"><b>TravelAthlete:</b> app designed for elite athletes.</p>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<p>Made in ETSIB</p>
+			<a href="#principal" class="ui-btn ui-btn-inline ui-btn-right ui-btn-icon-right ui-icon-grid">Acceder al menú</a>
+		</div>        
+  	</div>
+  	
+  	<div data-role="page" id="principal">
+        <div data-role="header" data-position="fixed" data-theme="b">
+        	<h1>Travel Athlete</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+        	<div data-role="navbar">
+				<ul>
+					<li><a href="#deportes"><img src="img/principal/deportes.png"></img><p>Deportes</p><p>Sports</p></a></li>
+					<li><a href="#frasesVida" onclick="rellenaLista_frasesVida(frasesVida)"><img src="img/principal/vida.png"></img><p>Vida cotidiana</p><p>Daily life</p></a></li>
+					<li><a href="#frasesAlimentacion" onclick="rellenaLista_frasesAlimentacion(frasesAlimentacion)"><img src="img/principal/alimentacion.png"></img><p>Dieta y alimentación</p><p>Diet and nutrition</p></a></li>
+					<li><a href="#frasesEnfermeria" onclick="rellenaLista_frasesEnfermeria(frasesEnfermeria)"><img src="img/principal/enfermeria.png"></img><p>Enfermería</p><p>Nursing</p></a></li>
+					<li><a href="#frasesHorarios" onclick="rellenaLista_frasesHorarios(frasesHorarios)"><img src="img/principal/horarios.png"></img><p>Horarios</p><p>Schedules</p></a></li>
+					<li><a href="#page-0"><img src="img/principal/practice.png"></img><p>¡Practica!</p><p>Practice!</p></a></li>
+				</ul>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+		</div>        
+  	</div>
+  	
+  	<div data-role="page" id="deportes">
+        <div data-role="header" data-position="fixed" data-theme="b">
+        	<h1>Deportes</h1>
+        	<h2>Sports</h2>
+        </div>
+        <div data-role="main" class="ui-content">
+        	<div data-role="navbar">
+				<ul>
+					<li><a href="#frasesFutbol" onclick="rellenaLista_frasesFutbol(frasesFutbol)"><img src="img/deportes/futbol.png"></img><p>Fútbol</p></a></li>
+					<li><a href="#frasesBaloncesto" onclick="rellenaLista_frasesBaloncesto(frasesBaloncesto)"><img src="img/deportes/baloncesto.png"></img><p>Baloncesto</p></a></li>
+					<li><a href="#frasesTenis" onclick="rellenaLista_frasesTenis(frasesTenis)"><img src="img/deportes/tenis.png"></img><p>Tenis</p></a></li>
+					<li><a href="#frasesSurf" onclick="rellenaLista_frasesSurf(frasesSurf)"><img src="img/deportes/surf.png"></img><p>Surf</p></a></li>
+				</ul>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<a href="#principal"class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Menu</a>
+		</div>        
+  	</div>
+  	
+  	<div data-role="page" id="frasesFutbol">
+  		<div data-role="header" data-position="fixed" data-theme="b" >
+			<h1>Palabras/Frases</h1>
+		</div>
+		<div data-role="content" id="listafrasesFutbol">	
+			<div class="listaulFutbol">		
+				<ul data-role="listview" data-filter="true" data-filter-placeholder="Buscar..." data-inset="true" data-icon="audio" data-icon->
+				</ul>
+			</div>	
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<a href="#deportes" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Menu</a>
+		</div>
+  	</div>
+  	
+  	<div data-role="page" id="frasesBaloncesto">
+  		<div data-role="header" data-position="fixed" data-theme="b" >
+			<h1>Palabras/Frases</h1>
+		</div>
+		<div data-role="content" id="listafrasesBaloncesto">	
+			<div class="listaulBaloncesto">		
+				<ul data-role="listview" data-filter="true" data-filter-placeholder="Buscar..." data-inset="true" data-icon="audio" data-icon->
+				</ul>
+			</div>	
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<a href="#deportes" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Menu</a>
+		</div>
+  	</div>
+  	
+  	<div data-role="page" id="frasesTenis">
+  		<div data-role="header" data-position="fixed" data-theme="b" >
+			<h1>Palabras/Frases</h1>
+		</div>
+		<div data-role="content" id="listafrasesTenis">	
+			<div class="listaulTenis">		
+				<ul data-role="listview" data-filter="true" data-filter-placeholder="Buscar..." data-inset="true" data-icon="audio" data-icon->
+				</ul>
+			</div>	
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<a href="#deportes" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Menu</a>
+		</div>
+  	</div>
+  	
+  	<div data-role="page" id="frasesSurf">
+  		<div data-role="header" data-position="fixed" data-theme="b" >
+			<h1>Palabras/Frases</h1>
+		</div>
+		<div data-role="content" id="listafrasesSurf">	
+			<div class="listaulSurf">		
+				<ul data-role="listview" data-filter="true" data-filter-placeholder="Buscar..." data-inset="true" data-icon="audio" data-icon->
+				</ul>
+			</div>	
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<a href="#deportes"class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Menu</a>
+		</div>
+  	</div>
+  	
+  	<div data-role="page" id="frasesVida">
+  		<div data-role="header" data-position="fixed" data-theme="b" >
+			<h1>Palabras/Frases</h1>
+		</div>
+		<div data-role="content" id="listafrasesVida">	
+			<div class="listaulVida">		
+				<ul data-role="listview" data-filter="true" data-filter-placeholder="Buscar..." data-inset="true" data-icon="audio" data-icon->
+				</ul>
+			</div>	
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<a href="#principal"class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Menu</a>
+		</div>
+  	</div>
+  	
+  	<div data-role="page" id="frasesAlimentacion">
+  		<div data-role="header" data-position="fixed" data-theme="b" >
+			<h1>Palabras/Frases</h1>
+		</div>
+		<div data-role="content" id="listafrasesAlimentacion">	
+			<div class="listaulAlimentacion">		
+				<ul data-role="listview" data-filter="true" data-filter-placeholder="Buscar..." data-inset="true" data-icon="audio" data-icon->
+				</ul>
+			</div>	
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<a href="#principal"class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Menu</a>
+		</div>
+  	</div>
+  	
+  	<div data-role="page" id="frasesEnfermeria">
+  		<div data-role="header" data-position="fixed" data-theme="b" >
+			<h1>Palabras/Frases</h1>
+		</div>
+		<div data-role="content" id="listafrasesEnfermeria">	
+			<div class="listaulEnfermeria">		
+				<ul data-role="listview" data-filter="true" data-filter-placeholder="Buscar..." data-inset="true" data-icon="audio" data-icon->
+				</ul>
+			</div>	
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<a href="#principal"class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Menu</a>
+		</div>
+  	</div>
+  	
+  	<div data-role="page" id="frasesHorarios">
+  		<div data-role="header" data-position="fixed" data-theme="b" >
+			<h1>Palabras/Frases</h1>
+		</div>
+		<div data-role="content" id="listafrasesHorarios">	
+			<div class="listaulHorarios">		
+				<ul data-role="listview" data-filter="true" data-filter-placeholder="Buscar..." data-inset="true" data-icon="audio" data-icon->
+				</ul>
+			</div>	
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<a href="#principal"class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Menu</a>
+		</div>
+  	</div>
+  	
+	<div data-role="page" id="page-0">
+			<div data-role="header" data-position="fixed" data-theme="b" >
+				<h1 style="margin-left:0;margin-right:0;white-space: nowrap;overflow: visible;">Practice!</h1>
+			</div>
+			<div data-role="content">
+				<div id="request" class="ui-field-contain" style="margin:5px 5%;">
+					<label for="login">LOGIN:</label>
+					<input name="text-1" id="login" data-clear-btn="true" value="" type="text" placeholder="Enter your login" />
+					<a href="" id="button-1" class="ui-btn ui-btn-inline ui-corner-all"	onclick="login()">LOGIN</a>
+					<a href="" id="button-2" class="ui-btn ui-btn-inline ui-corner-all"	onclick="loadContents()" style="display:none">KEEP LOGIN</a>
+				</div>
+		        <h3 class="login"></h3>
+				<form id="form-0" style="display:none">
+					<fieldset data-role="controlgroup" data-iconpos="right">
+						<legend id="question-0"></legend>
+						<input name="radio-choice-0" id="radio-choice-0a" data-mini="true" value="0" type="radio"/>
+						<label for="radio-choice-0a" id="label-radio-choice-0-0"></label>
+						<input name="radio-choice-0" id="radio-choice-0b" data-mini="true" value="1" type="radio"/>
+						<label for="radio-choice-0b" id="label-radio-choice-0-1"></label>
+						<input name="radio-choice-0" id="radio-choice-0c" data-mini="true" value="2" type="radio"/>
+						<label for="radio-choice-0c" id="label-radio-choice-0-2"></label>
+						<input name="radio-choice-0" id="radio-choice-0d" data-mini="true" value="3" type="radio"/>
+						<label for="radio-choice-0d" id="label-radio-choice-0-3"></label>
+					</fieldset>
+					<div style="text-align:center;">
+						<a href="" id="button-0-1" class="ui-btn ui-btn-inline ui-corner-all" onclick="check(0)">CHECK</a>
+						<a href="" id="button-0-2" class="ui-btn ui-btn-inline ui-corner-all" style="display:none;" onclick="">ADVICE</a>
+					</div>
+				</form>					
+			</div>
+			<div data-role="footer" data-position="fixed" data-theme="b">
+				<div class="ui-grid-b" style="width:80%; text-align:center; font-weight:normal;">
+					<div class="ui-block-a">RESULTADOS: </div>
+					<div class="ui-block-b res-1" id="res-0-1"></div>
+					<div class="ui-block-c res-2" id="res-0-2"></div>
+				</div>
+				<h4>PRACTICE!</h4>
+				<a href="#" id="prev-0" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Prev</a>
+				<a href="#page-1" id="next-0" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-r ui-btn-icon-left" data-transition="turn">Next</a>
+			</div>    
+        </div>
+        
+    <div data-role="page" id="pageMedalla">
+    	<div data-role="header" data-position="fixed" data-theme="b" >
+			<h1>Practice Medalla!</h1>
+		</div>
+		<div data-role="main" class="ui-content">
+        	<h1>HAS CONSEGUIDO LA MEDALLA DE ...</h1>
+        	<img id="oro" src="img/medallas/oro.png"></img>
+        	<img id="plata" src="img/medallas/plata.png"></img>
+        	<img id="bronce" src="img/medallas/bronce.png"></img>   	
+    	</div>
+    	<div data-role="footer" data-position="fixed" data-theme="b">
+			<a href="#principal" class="ui-btn ui-btn-inline ui-btn-icon-left ui-icon-grid">Menú</a>
+		</div>
+    </div>
+        
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/objects.js"></script>        
+        <script type="text/javascript" src="js/functions.js"></script>        
+        <script type="text/javascript" src="js/index.js"></script> 
+        <script type="text/javascript" src="js/frases.js"></script>    
+    </body>
+</html>
