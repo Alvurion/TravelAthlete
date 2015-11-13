@@ -205,3 +205,33 @@ function medalla(){
 	
 }
 
+function getRandomTestOrder(min, max, limite) {
+	
+    for(var i=0; i<limite; i++) {
+    	var valor=Math.floor(Math.random()*(max-min)+min);
+    	alert("Valor numero "+i+": "+valor);
+        if(i==0){
+        	valores[i]=valor;
+        	alert("Valor inicial: "+valores[i]);
+        }
+        else{
+        	for(k=0;k<i;k++){
+        		if(valor==valores[k]){
+        			alert("Repetido: ");
+        			k=i;
+        			i--;
+        		}
+        	}
+        	if(k==i){
+        		valores[i]=valor;
+        		alert("Valor guardado numero "+i+": "+valores[i]);
+        	}
+        }
+    }
+    
+    for(var l=0; l<limite; l++){
+    	alert("Valores["+l+"]: "+valores[l]);
+    }
+    
+    
+}
