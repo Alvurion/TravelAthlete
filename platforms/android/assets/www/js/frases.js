@@ -1,3 +1,12 @@
+var cargadoFutbol = 0;
+var cargadoBaloncesto = 0;
+var cargadoTenis = 0;
+var cargadoSurf = 0;
+var cargadoVida = 0;
+var cargadoAlimentacion = 0;
+var cargadoEnfermeria = 0;
+var cargadoHorarios = 0;
+
 var frasesFutbol = {
 		
 		futbol_1: 

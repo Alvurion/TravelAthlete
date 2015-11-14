@@ -3,44 +3,9 @@ var appConstants = {
 	localPermanentStorageFolder: "/sdcard/PracticaTravel/",
 };
 
-var valores = [];
+var numPreguntas = 5;
 
-var tests = {
-		login: null,
-		total: 3,
-		test: [
-		       {
-		    	   	question: "Quien ganará la liga 2015-16?",
-		    	   	resp: [
-		    	          "Celta",
-		    	          "Cadiz",
-		    		      "Rayo",
-		    		      "ManU"
-		    		      ],
-		    		correct: "0"	
-		       },
-		       {
-		    	   	question: "Donde viven los Bulaos?",
-		    	   	resp: [
-		    	          "Iurreta",
-		    	          "JSON",
-		    		      "Madrid",
-		    		      "Roma"
-		    		      ],
-		    		correct: "2"	      
-		       },
-		       {
-		    	   	question: "Quien ganará el mundial de MotoGP?",
-		    	   	resp: [
-		    	          "Lorenzo",
-		    	          "Rossi",
-		    		      "Tu prima",
-		    		      "Edu el Burlau"
-		    		      ],
-		    		correct: "0"
-		       }
-		 ]
-};
+var valores = [];
 
 var results = {
 	login: null,
@@ -68,15 +33,13 @@ var page = {
 					'<label for="radio-choice-'+i+'b" id="label-radio-choice-'+i+'-1"></label>'+
 					'<input name="radio-choice-'+i+'" id="radio-choice-'+i+'c" data-mini="true" value="2" type="radio"/>'+
 					'<label for="radio-choice-'+i+'c" id="label-radio-choice-'+i+'-2"></label>'+
-					'<input name="radio-choice-'+i+'" id="radio-choice-'+i+'d" data-mini="true" value="3" type="radio"/>'+
-					'<label for="radio-choice-'+i+'d" id="label-radio-choice-'+i+'-3"></label>'+
 					'</fieldset>'+
 					'<div style="text-align:center;">'+
 						'<a href="" id="button-'+i+'-1" class="ui-btn ui-btn-inline ui-corner-all" onclick="check('+i+')">CHECK</a>'+				
 					'</div>'+
 				'</form>'+				
 			'</div>';
-		if (i!=(tests.total-1)){
+		if (i!=(testsFutbolCastellano.total-1)){
 		var footerDiv=
 			'<div data-role="footer" data-position="fixed" data-theme="b">'+
 				'<div class="ui-grid-b" style="width:80%; text-align:center; font-weight:normal;">'+
@@ -84,7 +47,7 @@ var page = {
 					'<div class="ui-block-b res-1" id="res-'+i+'-1"></div>'+
 					'<div class="ui-block-c res-2" id="res-'+i+'-2"></div>'+
 				'</div>'+			
-				'<h4>Practica TravelAthlete</h4>'+
+				'<h4>TravelAthlete</h4>'+
 				'<a href="#" id="prev-'+i+'" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Prev</a>'+
 				'<a href="#" id="next-'+i+'" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-r ui-btn-icon-left" data-transition="turn">Next</a>'+
 			'</div>';
@@ -93,7 +56,7 @@ var page = {
 			var footerDiv=
 			'<div data-role="footer" data-position="fixed" data-theme="b">'+
 			'<div class="ui-grid-b" style="width:80%; text-align:center; font-weight:normal;">'+
-				'<div class="ui-block-a">RESULTS: </div>'+
+				'<div class="ui-block-a">RESULTADOS: </div>'+
 				'<div class="ui-block-b res-1" id="res-'+i+'-1"></div>'+
 				'<div class="ui-block-c res-2" id="res-'+i+'-2"></div>'+
 			'</div>'+			
@@ -109,11 +72,11 @@ var page = {
 	},
 	load: function(i) {
 		
-     	$("#question-"+i).text("QUESTION "+i+": "+tests.test[i].question);
+     	$("#question-"+i).text("PREGUNTA "+i+": "+testsFutbolCastellano.test[i].pregunta);
     	
      	$("label[id|='label-radio-choice-"+i+"']").each(
      			function(index) {     				
-     				$(this).text(tests.test[i].resp[index]);     				
+     				$(this).text(testsFutbolCastellano.test[i].respuestas[index]);     				
     		    }
      	);
      	

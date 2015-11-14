@@ -1,8 +1,15 @@
 function login() {
+	
+	alert("aaaaa");
+
 	var loginVal=$("#login").val();
 	
-	tests.login=loginVal;
+	alert("a");
+	
+	testsFutbolCastellano.login=loginVal;
 	results.login=loginVal;
+	
+	alert("b");
 	
 	//Guardar loginVal de forma permanente en "results_login"
 	localStorage.setItem("results_login",loginVal);
@@ -10,23 +17,31 @@ function login() {
 	localStorage.setItem("results_corrects",0);
 	//Guardar valor 0 de forma permanente en "results_answered"
 	localStorage.setItem("results_answered",0);
-	loadContents();
+	
+	alert("c");
+	
+	loadContents(testsFutbolCastellano);
 }
 
-
-
 function loadContents(){
+	
 	page.load(0);
 	
+	alert("d");
+	
 	var pageDiv;
-	for(var i=1;i<tests.total;i++) {
+	for(var i=1;i<testsFutbolCastellano.total;i++) {
 		pageDiv=page.create(i);
 		$("body").append(pageDiv);
 		page.load(i);
 	}
 
+	alert("e");
+	
  	$("#prev-0").remove();
- 	$("#next-"+(tests.total-1)).attr("href","#page-0");
+ 	$("#next-"+(testsFutbolCastellano.total-1)).attr("href","#page-0");
+ 	
+ 	alert("f");
 	
 	//Guardar en results.login el valor de guardado en "results_login"
  	results.login=localStorage.getItem("results_login");
@@ -51,79 +66,111 @@ function loadContents(){
 	$("#form-0").show();	
 }
 
-function rellenaLista_frasesFutbol(lista){	
+function rellenaLista_frasesFutbol(lista){
+	if(cargadoFutbol==0){
 	$.each(lista, function(){
 		var li = $('<li>');
 		var cast='<h2>'+this.castellano+'</h2>';
 		var ing='<p>'+this.ingles+'</p></li>'
 		li.append(cast,ing);
 		$("#listafrasesFutbol > div.listaulFutbol ul").append(li);
-	})	
+	})
+	cargadoFutbol=1;
+	}
+	
+	alert("Cargado");
 }
-function rellenaLista_frasesBaloncesto(lista){	
+
+function rellenaLista_frasesBaloncesto(lista){
+	if(cargadoBaloncesto==0){
 	$.each(lista, function(){
 		var li = $('<li>');
 		var cast='<h2>'+this.castellano+'</h2>';
 		var ing='<p>'+this.ingles+'</p></li>'
 		li.append(cast,ing);
 		$("#listafrasesBaloncesto > div.listaulBaloncesto ul").append(li);
-	})	
+	})
+	cargadoBaloncesto=1;
+	}
 }
-function rellenaLista_frasesTenis(lista){	
+
+function rellenaLista_frasesTenis(lista){
+	if(cargadoTenis==0){
 	$.each(lista, function(){
 		var li = $('<li>');
 		var cast='<h2>'+this.castellano+'</h2>';
 		var ing='<p>'+this.ingles+'</p></li>'
 		li.append(cast,ing);
 		$("#listafrasesTenis > div.listaulTenis ul").append(li);
-	})	
+	})
+	cargadoTenis=1;
+	}
 }
-function rellenaLista_frasesSurf(lista){	
+
+function rellenaLista_frasesSurf(lista){
+	if(cargadoSurf==0){
 	$.each(lista, function(){
 		var li = $('<li>');
 		var cast='<h2>'+this.castellano+'</h2>';
 		var ing='<p>'+this.ingles+'</p></li>'
 		li.append(cast,ing);
 		$("#listafrasesSurf > div.listaulSurf ul").append(li);
-	})	
+	})
+	cargadoSurf=1;
+	}
 }
-function rellenaLista_frasesVida(lista){	
+
+function rellenaLista_frasesVida(lista){
+	if(cargadoVida==0){
 	$.each(lista, function(){
 		var li = $('<li>');
 		var cast='<h2>'+this.castellano+'</h2>';
 		var ing='<p>'+this.ingles+'</p></li>'
 		li.append(cast,ing);
 		$("#listafrasesVida > div.listaulVida ul").append(li);
-	})	
+	})
+	cargadoVida=1;
+	}
 }
-function rellenaLista_frasesAlimentacion(lista){	
+
+function rellenaLista_frasesAlimentacion(lista){
+	if(cargadoAlimentacion==0){
 	$.each(lista, function(){
 		var li = $('<li>');
 		var cast='<h2>'+this.castellano+'</h2>';
 		var ing='<p>'+this.ingles+'</p></li>'
 		li.append(cast,ing);
 		$("#listafrasesAlimentacion > div.listaulAlimentacion ul").append(li);
-	})	
+	})
+	cargadoAlimentacion=1;
+	}
 }
-function rellenaLista_frasesEnfermeria(lista){	
+
+function rellenaLista_frasesEnfermeria(lista){
+	if(cargadoEnfermeria==0){
 	$.each(lista, function(){
 		var li = $('<li>');
 		var cast='<h2>'+this.castellano+'</h2>';
 		var ing='<p>'+this.ingles+'</p></li>'
 		li.append(cast,ing);
 		$("#listafrasesEnfermeria > div.listaulEnfermeria ul").append(li);
-	})	
+	})
+	cargadoEnfermeria=1;
+	}
 }
-function rellenaLista_frasesHorarios(lista){	
+
+function rellenaLista_frasesHorarios(lista){
+	if(cargadoHorarios==0){
 	$.each(lista, function(){
 		var li = $('<li>');
 		var cast='<h2>'+this.castellano+'</h2>';
 		var ing='<p>'+this.ingles+'</p></li>'
 		li.append(cast,ing);
 		$("#listafrasesHorarios > div.listaulHorarios ul").append(li);
-	})	
+	})
+	cargadoHorarios=1;
+	}
 }
-
 
 function check(i) {
 //	alert("check 1");
@@ -131,7 +178,7 @@ function check(i) {
 	results.answered++;
 	
 	var answer=$("input[name='radio-choice-"+i+"']:checked").val();
-	if(answer==tests.test[i].correct) {
+	if(answer==testsFutbolCastellano.test[i].correcto) {
 		alert("CORRECT");
 		results.corrects++;
 		$("#button-"+i+"-1").hide();
@@ -148,7 +195,7 @@ function check(i) {
 	
 	$("label[id|='label-radio-choice-"+i+"']").each( //each es para que lo haga con cada uno de los radio button
 		function(index) {
-			if(index!=tests.test[i].correct) {
+			if(index!=testsFutbolCastellano.test[i].correcto) {
 				$(this).css("color","red");
 			}
 			else
@@ -171,9 +218,6 @@ function medalla(){
 	//Si no se ha tocado nada del test, ya que 0/0=IND
 	if(results.corrects==0 && results.answered==0)
 		porcen=0;
-	
-	alert("CANTIDAD: "+frasesAlimentacion.total);
-	//alert("Cant2: "+appConstants.cantidad);
 	
 	//Bronce
 	if (porcen<=34){
@@ -205,7 +249,7 @@ function medalla(){
 	
 }
 
-function getRandomArbitrary(min, max, limite) {
+function getRandomTestOrder(min, max, limite) {
 	
     for(var i=0; i<limite; i++) {
     	var valor=Math.floor(Math.random()*(max-min)+min);

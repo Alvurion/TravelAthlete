@@ -36,7 +36,10 @@
         <div data-role="main" class="ui-content">
         	<div data-role="navbar">
 				<ul>
-					<li><a href="#deportes"><img src="img/principal/deportes.png"></img><p>Deportes</p><p>Sports</p></a></li>
+					<li><a href="#frasesFutbol" onclick="rellenaLista_frasesFutbol(frasesFutbol)"><img src="img/deportes/futbol.png"></img><p>Fútbol</p></a></li>
+					<li><a href="#frasesBaloncesto" onclick="rellenaLista_frasesBaloncesto(frasesBaloncesto)"><img src="img/deportes/baloncesto.png"></img><p>Baloncesto</p></a></li>
+					<li><a href="#frasesTenis" onclick="rellenaLista_frasesTenis(frasesTenis)"><img src="img/deportes/tenis.png"></img><p>Tenis</p></a></li>
+					<li><a href="#frasesSurf" onclick="rellenaLista_frasesSurf(frasesSurf)"><img src="img/deportes/surf.png"></img><p>Surf</p></a></li>
 					<li><a href="#frasesVida" onclick="rellenaLista_frasesVida(frasesVida)"><img src="img/principal/vida.png"></img><p>Vida cotidiana</p><p>Daily life</p></a></li>
 					<li><a href="#frasesAlimentacion" onclick="rellenaLista_frasesAlimentacion(frasesAlimentacion)"><img src="img/principal/alimentacion.png"></img><p>Dieta y alimentación</p><p>Diet and nutrition</p></a></li>
 					<li><a href="#frasesEnfermeria" onclick="rellenaLista_frasesEnfermeria(frasesEnfermeria)"><img src="img/principal/enfermeria.png"></img><p>Enfermería</p><p>Nursing</p></a></li>
@@ -46,26 +49,6 @@
 			</div>
 		</div>
 		<div data-role="footer" data-position="fixed" data-theme="b">
-		</div>        
-  	</div>
-  	
-  	<div data-role="page" id="deportes">
-        <div data-role="header" data-position="fixed" data-theme="b">
-        	<h1>Deportes</h1>
-        	<h2>Sports</h2>
-        </div>
-        <div data-role="main" class="ui-content">
-        	<div data-role="navbar">
-				<ul>
-					<li><a href="#frasesFutbol" onclick="rellenaLista_frasesFutbol(frasesFutbol)"><img src="img/deportes/futbol.png"></img><p>Fútbol</p></a></li>
-					<li><a href="#frasesBaloncesto" onclick="rellenaLista_frasesBaloncesto(frasesBaloncesto)"><img src="img/deportes/baloncesto.png"></img><p>Baloncesto</p></a></li>
-					<li><a href="#frasesTenis" onclick="rellenaLista_frasesTenis(frasesTenis)"><img src="img/deportes/tenis.png"></img><p>Tenis</p></a></li>
-					<li><a href="#frasesSurf" onclick="rellenaLista_frasesSurf(frasesSurf)"><img src="img/deportes/surf.png"></img><p>Surf</p></a></li>
-				</ul>
-			</div>
-		</div>
-		<div data-role="footer" data-position="fixed" data-theme="b">
-			<a href="#principal"class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Menu</a>
 		</div>        
   	</div>
   	
@@ -80,7 +63,9 @@
 			</div>	
 		</div>
 		<div data-role="footer" data-position="fixed" data-theme="b">
-			<a href="#deportes" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Menu</a>
+			<a href="#principal" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Menu</a>
+			<a href="#page-0" class="ui-btn ui-btn-inline ui-btn-icon-right ui-icon-navigation">¡Practica!</a>
+			<a href="#page-0" class="ui-btn ui-btn-inline ui-btn-icon-right ui-icon-navigation">Practice!</a>
 		</div>
   	</div>
   	
@@ -95,7 +80,7 @@
 			</div>	
 		</div>
 		<div data-role="footer" data-position="fixed" data-theme="b">
-			<a href="#deportes" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Menu</a>
+			<a href="#principal" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Menu</a>
 		</div>
   	</div>
   	
@@ -110,7 +95,7 @@
 			</div>	
 		</div>
 		<div data-role="footer" data-position="fixed" data-theme="b">
-			<a href="#deportes" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Menu</a>
+			<a href="#principal" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Menu</a>
 		</div>
   	</div>
   	
@@ -125,7 +110,7 @@
 			</div>	
 		</div>
 		<div data-role="footer" data-position="fixed" data-theme="b">
-			<a href="#deportes"class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Menu</a>
+			<a href="#principal" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Menu</a>
 		</div>
   	</div>
   	
@@ -140,7 +125,7 @@
 			</div>	
 		</div>
 		<div data-role="footer" data-position="fixed" data-theme="b">
-			<a href="#principal"class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Menu</a>
+			<a href="#principal" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Menu</a>
 		</div>
   	</div>
   	
@@ -155,7 +140,7 @@
 			</div>	
 		</div>
 		<div data-role="footer" data-position="fixed" data-theme="b">
-			<a href="#principal"class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Menu</a>
+			<a href="#principal" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Menu</a>
 		</div>
   	</div>
   	
@@ -170,7 +155,7 @@
 			</div>	
 		</div>
 		<div data-role="footer" data-position="fixed" data-theme="b">
-			<a href="#principal"class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Menu</a>
+			<a href="#principal" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Menu</a>
 		</div>
   	</div>
   	
@@ -185,7 +170,7 @@
 			</div>	
 		</div>
 		<div data-role="footer" data-position="fixed" data-theme="b">
-			<a href="#principal"class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Menu</a>
+			<a href="#principal" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Menu</a>
 		</div>
   	</div>
   	
@@ -210,12 +195,10 @@
 						<label for="radio-choice-0b" id="label-radio-choice-0-1"></label>
 						<input name="radio-choice-0" id="radio-choice-0c" data-mini="true" value="2" type="radio"/>
 						<label for="radio-choice-0c" id="label-radio-choice-0-2"></label>
-						<input name="radio-choice-0" id="radio-choice-0d" data-mini="true" value="3" type="radio"/>
-						<label for="radio-choice-0d" id="label-radio-choice-0-3"></label>
 					</fieldset>
 					<div style="text-align:center;">
 						<a href="" id="button-0-1" class="ui-btn ui-btn-inline ui-corner-all" onclick="check(0)">CHECK</a>
-						<a href="" id="button-0-2" class="ui-btn ui-btn-inline ui-corner-all" onclick="getRandomArbitrary(0,20,20)">ADVICE</a>
+						<a href="" id="button-0-2" class="ui-btn ui-btn-inline ui-corner-all" onclick="">ADVICE</a>
 					</div>
 				</form>					
 			</div>
