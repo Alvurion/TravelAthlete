@@ -5,6 +5,13 @@ var appConstants = {
 
 var numPreguntas = 5;
 
+var nombreTest=null;
+var max=0;
+
+var logged_in=0;
+
+var creado=0;
+
 var valores = [];
 
 var results = {
@@ -39,11 +46,11 @@ var page = {
 					'</div>'+
 				'</form>'+				
 			'</div>';
-		if (i!=(testsFutbolCastellano.total-1)){
+		if (i!=(numPreguntas-1)){
 		var footerDiv=
 			'<div data-role="footer" data-position="fixed" data-theme="b">'+
 				'<div class="ui-grid-b" style="width:80%; text-align:center; font-weight:normal;">'+
-					'<div class="ui-block-a">RESULTS: </div>'+
+					'<div class="ui-block-a">RESULTADOS: </div>'+
 					'<div class="ui-block-b res-1" id="res-'+i+'-1"></div>'+
 					'<div class="ui-block-c res-2" id="res-'+i+'-2"></div>'+
 				'</div>'+			
@@ -72,11 +79,14 @@ var page = {
 	},
 	load: function(i) {
 		
-     	$("#question-"+i).text("PREGUNTA "+i+": "+testsFutbolCastellano.test[i].pregunta);
+		$("#button-"+i+"-1").show();
+		$("#button-"+i+"-1").attr("onclick","check("+i+")");
+		
+     	$("#question-"+i).text("PREGUNTA "+(i+1)+": "+nombreTest.test[valores[i]].pregunta);
     	
      	$("label[id|='label-radio-choice-"+i+"']").each(
      			function(index) {     				
-     				$(this).text(testsFutbolCastellano.test[i].respuestas[index]);     				
+     				$(this).text(nombreTest.test[valores[i]].respuestas[index]);     				
     		    }
      	);
      	
@@ -84,6 +94,8 @@ var page = {
      	
      	$("#prev-"+i).attr("href","#page-"+(i-1));
      	$("#next-"+i).attr("href","#page-"+(i+1));
+     	
+     	
      	    		
  	}
 };

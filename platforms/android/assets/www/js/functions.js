@@ -1,15 +1,19 @@
-function login() {
+function cambiarTest(nametest){
+	nombreTest=nametest;
+	max=nombreTest.total;
+	getRandomTestOrder(0, max, numPreguntas);
 	
-	alert("aaaaa");
+	if(logged_in==1){
+		loadContents();
+	}
+}
+
+function login() {
 
 	var loginVal=$("#login").val();
 	
-	alert("a");
-	
-	testsFutbolCastellano.login=loginVal;
+	nombreTest.login=loginVal;
 	results.login=loginVal;
-	
-	alert("b");
 	
 	//Guardar loginVal de forma permanente en "results_login"
 	localStorage.setItem("results_login",loginVal);
@@ -18,30 +22,27 @@ function login() {
 	//Guardar valor 0 de forma permanente en "results_answered"
 	localStorage.setItem("results_answered",0);
 	
-	alert("c");
+	logged_in=1;
 	
-	loadContents(testsFutbolCastellano);
+	loadContents();
 }
 
 function loadContents(){
 	
 	page.load(0);
 	
-	alert("d");
-	
 	var pageDiv;
-	for(var i=1;i<testsFutbolCastellano.total;i++) {
-		pageDiv=page.create(i);
-		$("body").append(pageDiv);
+	for(var i=1;i<numPreguntas;i++) {
+		if(creado==0){
+			pageDiv=page.create(i);
+			$("body").append(pageDiv);
+		}
 		page.load(i);
 	}
-
-	alert("e");
+	creado=1;
 	
  	$("#prev-0").remove();
- 	$("#next-"+(testsFutbolCastellano.total-1)).attr("href","#page-0");
- 	
- 	alert("f");
+ 	$("#next-"+(numPreguntas-1)).attr("href","#page-0");
 	
 	//Guardar en results.login el valor de guardado en "results_login"
  	results.login=localStorage.getItem("results_login");
@@ -58,9 +59,9 @@ function loadContents(){
 	else
 		$(".res-2").text("0%");
 
-	fitImg();//para ajustar a los anchos de la pantalla
+	//fitImg();//para ajustar a los anchos de la pantalla
  	
-	$("body").enhanceWithin();
+	//$("body").enhanceWithin();
 	
 	$("#request").hide();
 	$("#form-0").show();	
@@ -77,8 +78,6 @@ function rellenaLista_frasesFutbol(lista){
 	})
 	cargadoFutbol=1;
 	}
-	
-	alert("Cargado");
 }
 
 function rellenaLista_frasesBaloncesto(lista){
@@ -178,7 +177,7 @@ function check(i) {
 	results.answered++;
 	
 	var answer=$("input[name='radio-choice-"+i+"']:checked").val();
-	if(answer==testsFutbolCastellano.test[i].correcto) {
+	if(answer==nombreTest.test[valores[i]].correcto) {
 		alert("CORRECT");
 		results.corrects++;
 		$("#button-"+i+"-1").hide();
@@ -193,15 +192,17 @@ function check(i) {
 	$(".res-1").text(""+results.corrects+"/"+results.answered);
 	$(".res-2").text(""+(results.corrects*100/results.answered).toFixed(2)+"%");
 	
+	/*
 	$("label[id|='label-radio-choice-"+i+"']").each( //each es para que lo haga con cada uno de los radio button
 		function(index) {
-			if(index!=testsFutbolCastellano.test[i].correcto) {
+			if(index!=nombreTest.test[valores[i]].correcto) {
 				$(this).css("color","red");
 			}
 			else
 				$(this).css({"color":"white","background-color":"green","font-size":"24px"});
 		}
 	);
+	*/
 
 	$("#button-"+i+"-1").attr("onclick","");
 	
@@ -253,29 +254,19 @@ function getRandomTestOrder(min, max, limite) {
 	
     for(var i=0; i<limite; i++) {
     	var valor=Math.floor(Math.random()*(max-min)+min);
-    	alert("Valor numero "+i+": "+valor);
         if(i==0){
         	valores[i]=valor;
-        	alert("Valor inicial: "+valores[i]);
         }
         else{
         	for(k=0;k<i;k++){
         		if(valor==valores[k]){
-        			alert("Repetido: ");
         			k=i;
         			i--;
         		}
         	}
         	if(k==i){
         		valores[i]=valor;
-        		alert("Valor guardado numero "+i+": "+valores[i]);
         	}
         }
-    }
-    
-    for(var l=0; l<limite; l++){
-    	alert("Valores["+l+"]: "+valores[l]);
-    }
-    
-    
+    }    
 }
