@@ -1,6 +1,6 @@
 var appConstants = {
 //	serverURL: "http://158.227.64.57:8080/"+"TTA1516_LS-EX_8S/", //EHU public
-	localPermanentStorageFolder: "/sdcard/PracticaTravel/",
+	localPermanentStorageFolder: "/sdcard/TravelAthlete/",
 };
 
 var numPreguntas = 5;

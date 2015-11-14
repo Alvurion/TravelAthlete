@@ -22,12 +22,12 @@ function login() {
 	//Guardar valor 0 de forma permanente en "results_answered"
 	localStorage.setItem("results_answered",0);
 	
-	logged_in=1;
-	
 	loadContents();
 }
 
 function loadContents(){
+	
+	logged_in=1;
 	
 	page.load(0);
 	

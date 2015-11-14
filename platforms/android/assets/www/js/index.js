@@ -21,11 +21,11 @@ var app = {
     receivedEvent: function(id) {
     	// Para hacer el LOGIN
 		var storedLogin=localStorage.getItem("results_login");
-		if(storedLogin!=null) {//si ya habido un login antes
+		if(storedLogin!=null) {//si ya ha habido un login antes
 			//Poner storedLogin como valor del input id=login
 			$("#login").val(storedLogin);
 			//Cambiar el texto del botón id=button-1 a "NEW LOGIN"
-			$("#button-1").text("NEW LOGIN");
+			$("#button-1").text("NUEVO LOGIN");
 			//Mostrar el botón id=button-2
 			$("#button-2").show();
 		}
